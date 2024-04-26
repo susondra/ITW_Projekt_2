@@ -1,0 +1,416 @@
+/*
+ *  Login: xsustro00
+ *
+ *
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.torange,
+.obdobi {
+    color: rgb(221, 111, 21);
+}
+
+.tblack {
+    color: black;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+    position: relative;
+    top: 10vh;
+    /*background-color: rgb(213, 213, 213);*/
+    font-size: 20px;
+    background-color: rgb(250, 250, 250);
+    color: rgb(76, 76, 76);
+    width: 100vw;
+    overflow-x: scroll;
+}
+
+@media (min-width: 1024px) {
+    body {
+        width: calc(100% - 230px);
+        top: 0;
+        margin-left: 230px;
+    }
+}
+
+header h1 a,
+header i {
+    font-size: 30px;
+    margin: 8px;
+    text-decoration: none;
+    color: white;
+}
+
+li a.active {
+    color: white;
+}
+
+
+/*rgb(255, 230, 0) zluta*/
+header i {
+    margin-left: auto;
+    margin-right: 16px;
+    border: 1px solid white;
+    /* Příklad barvy a tloušťky hran */
+    border-radius: 6px;
+    /* Zaoblení hran */
+    padding: 5px;
+}
+
+#mob_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header img {
+    display: none;
+    width: 170px;
+    height: 200px;
+    border: 8px solid rgb(40, 158, 255);
+    border-radius: 100%;
+    margin: 0 auto;
+    margin-top: -20vh;
+}
+
+@media (min-width: 1024px) {
+    #mob_nav {
+        display: none;
+    }
+
+    header img {
+        display: flex;
+    }
+}
+
+header {
+    padding-top: 1vh;
+    position: fixed;
+    top: 0;
+    height: 10vh;
+    width: 100vw;
+    background-color: rgb(50, 73, 181);
+    z-index: 100;
+}
+
+@media (min-width: 1024px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 230px;
+        background-color: rgb(50, 73, 181);
+    }
+}
+
+
+#nav_menu {
+    position: relative;
+    top: -1vh;
+    list-style-type: none;
+    background-color: rgb(50, 73, 181);
+    padding-bottom: 1vh;
+    overflow: hidden;
+    height: 0;
+    transition: height 1s ease;
+}
+
+@media (min-width: 1024px) {
+    #nav_menu {
+        top: 8vh;
+        height: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    #nav_menu li {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+li {
+    margin: 8px;
+}
+
+
+#nav_menu.open {
+    height: 190px;
+    /* rozbali se menu o height */
+}
+
+header li a {
+    font-size: 26px;
+    text-decoration: none;
+    color: rgb(150, 150, 150);
+}
+
+
+
+main {
+    padding: 5px;
+}
+
+@media (min-width: 1024px) {
+    main {
+        padding: 10px;
+    }
+}
+
+#udaje p {
+    color: rgb(57, 57, 57);
+}
+
+main h2 {
+    text-transform: uppercase;
+    font-size: 50px;
+    color: rgb(57, 57, 57);
+}
+
+h1,
+main h3 {
+    color: rgb(57, 57, 57);
+}
+
+#uvod {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    height: auto;
+
+}
+
+main>section {
+    padding: 5vh 3vw 5vh 3vw;
+    border-bottom: 2px solid rgb(150, 150, 150);
+}
+
+#uvod h1 {
+    font-size: 10vw;
+}
+
+@media (min-width: 1024px) {
+    #uvod h1 {
+        font-size: 7vw;
+    }
+}
+
+#uvod p {
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+#uvod div {
+    margin-bottom: 5vh;
+}
+
+#udaje p,
+#udaje a {
+    padding: 5px;
+    display: inline;
+    line-height: 2;
+    white-space: nowrap;
+}
+
+#uvod p i {
+    font-size: 1.4em;
+}
+
+#uvod p i.fa-css3 {
+    font-size: 1.2em;
+}
+
+#udaje p::after {
+    content: "*";
+    padding-left: 10px;
+    font-weight: 600;
+    display: inline;
+}
+
+.fa-js {
+    color: yellow;
+    background-color: black;
+
+}
+
+.fa-html5 {
+    color: orange;
+}
+
+.fa-css3 {
+    color: white;
+    padding: 4px 3px 2px 4px;
+    background-color: rgb(5, 180, 238);
+}
+
+.fa-phone {
+    color: rgb(0, 183, 0);
+}
+
+
+.fa-github {
+    font-size: 3em;
+    color: black;
+}
+
+.fa-facebook {
+    font-size: 3em;
+    color: rgb(70, 70, 255);
+}
+
+.fa-discord {
+    position: relative;
+    top: -0.2em;
+    width: 1.6em;
+    height: 1.6em;
+    font-size: 2em;
+    color: white;
+    background-color: rgb(86, 86, 222);
+    padding: 0.18em;
+    padding-top: 0.25em;
+    border-radius: 100%;
+}
+
+.fa-linkedin {
+    position: relative;
+    top: 0.1em;
+    font-size: 3.5em;
+    color: rgb(61, 155, 255);
+}
+
+#soc_site {
+    margin-top: 5vh;
+}
+
+#soc_site i {
+    margin-left: 2vw;
+}
+
+@media (min-width: 1024px) {
+
+    .fa-facebook,
+    .fa-github {
+        font-size: 5.5em;
+    }
+
+    .fa-linkedin {
+        font-size: 6em;
+    }
+
+    .fa-discord {
+        font-size: 3.5em;
+    }
+}
+
+#vzdelani {
+    height: auto;
+}
+
+div.skola {
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+h3.nazev {
+    text-transform: uppercase;
+}
+
+.skola span.obdobi {
+    grid-column: 1;
+    text-align: right;
+}
+
+.skola span {
+    grid-column: 1;
+}
+
+@media (min-width: 1024px) {
+    .skola span.obdobi {
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+#projekty h2 {
+    margin-bottom: 4vh;
+}
+
+#projekty div.sub {
+    padding: 2vh 0 4vh 0;
+    border-top: 2px dotted rgb(150, 150, 150);
+}
+
+
+div.tabulka {
+    overflow-x: auto;
+}
+
+table {
+    margin-top: 2vh;
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+}
+
+table,
+tr,
+th {
+    padding: 5px;
+    border: 2px solid black;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.row.header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+
+#zajmy p {
+    padding-top: 5vh;
+}
+
+
+footer {
+    font-size: 20px;
+    margin-left: 2%;
+    height: 8vh;
+    margin-top: 1vh;
+}
+
+footer span {
+    display: block;
+}
+
+@media (min-width: 1024px) {
+
+    footer span:nth-child(2) {
+        margin-left: 3%;
+
+    }
+
+    footer span {
+        display: inline-block;
+    }
+
+    footer {
+        height: 6vh;
+    }
+}
