@@ -5,6 +5,7 @@
  */
 
 * {
+    /*globalni nastaveni elementu*/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -19,6 +20,7 @@
     color: black;
 }
 
+/*body mimo header*/
 body {
     font-family: Verdana, sans-serif;
     position: relative;
@@ -28,9 +30,10 @@ body {
     background-color: rgb(250, 250, 250);
     color: rgb(76, 76, 76);
     width: 100vw;
-    overflow-x: scroll;
 }
 
+/*kdyz je velka obrzovka
+tak body bude mimo header*/
 @media (min-width: 1024px) {
     body {
         width: calc(100% - 230px);
@@ -47,26 +50,30 @@ header i {
     color: white;
 }
 
+/*zvyrazni v jake sekci se zrovna nachazime*/
 li a.active {
     color: white;
 }
 
 
 /*rgb(255, 230, 0) zluta*/
-header i {
+header .button {
     margin-left: auto;
     margin-right: 16px;
     border: 1px solid white;
-    /* Příklad barvy a tloušťky hran */
     border-radius: 6px;
-    /* Zaoblení hran */
+    /*Zaoblení hran*/
     padding: 5px;
 }
 
+/*mobilni navigace funguje pomoci flex
+space-between udela ze dane 2 elementy
+ jsou odstrceny na boky a mezi nimi je mezera*/
 #mob_nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgb(50, 73, 181);
 }
 
 
@@ -76,6 +83,7 @@ header img {
     height: 200px;
     border: 8px solid rgb(40, 158, 255);
     border-radius: 100%;
+    /*kruhovy portet*/
     margin: 0 auto;
     margin-top: -20vh;
 }
@@ -100,6 +108,7 @@ header {
     z-index: 100;
 }
 
+/*pc navigace je flex ve sloupci*/
 @media (min-width: 1024px) {
     header {
         display: flex;
@@ -113,7 +122,7 @@ header {
     }
 }
 
-
+/*vyjizdeci menu pro mobily*/
 #nav_menu {
     position: relative;
     top: -1vh;
@@ -143,10 +152,9 @@ li {
     margin: 8px;
 }
 
-
+/*menu se rozbali o height*/
 #nav_menu.open {
     height: 190px;
-    /* rozbali se menu o height */
 }
 
 header li a {
@@ -159,6 +167,10 @@ header li a {
 
 main {
     padding: 5px;
+    z-index: 20;
+    /*z-index urcuje co je v popredi
+    20 neni uplne v popredi ale ani v pozadi
+    (za header)*/
 }
 
 @media (min-width: 1024px) {
@@ -182,6 +194,7 @@ main h3 {
     color: rgb(57, 57, 57);
 }
 
+/*uvodni strana min-vyska 100vh = 1 vyska obrazovky*/
 #uvod {
     display: flex;
     flex-direction: column;
@@ -198,6 +211,7 @@ main>section {
 
 #uvod h1 {
     font-size: 10vw;
+    /*responzivni velikost textu*/
 }
 
 @media (min-width: 1024px) {
@@ -215,6 +229,8 @@ main>section {
     margin-bottom: 5vh;
 }
 
+
+/*nowrap drzi jednotlive udaje v jednom kuse*/
 #udaje p,
 #udaje a {
     padding: 5px;
@@ -223,6 +239,7 @@ main>section {
     white-space: nowrap;
 }
 
+/*1.4x puvodni velikost*/
 #uvod p i {
     font-size: 1.4em;
 }
@@ -231,6 +248,7 @@ main>section {
     font-size: 1.2em;
 }
 
+/*za p se udela "*"*/
 #udaje p::after {
     content: "*";
     padding-left: 10px;
@@ -269,6 +287,7 @@ main>section {
     color: rgb(70, 70, 255);
 }
 
+/*hrani si s rozmery aby to vypadalo jako opravdove logo*/
 .fa-discord {
     position: relative;
     top: -0.2em;
@@ -329,6 +348,9 @@ h3.nazev {
     text-transform: uppercase;
 }
 
+/*skola je udelana pomoci grid
+pro mobil vse v jednom sloupci
+pro pc je obdobi ve druhem*/
 .skola span.obdobi {
     grid-column: 1;
     text-align: right;
@@ -354,23 +376,39 @@ h3.nazev {
     border-top: 2px dotted rgb(150, 150, 150);
 }
 
-
+/*takova obalka tabulky
+tabulka muze byt i sirsi jak obrazovka, 
+ale nerozbije vzhled stranky*/
 div.tabulka {
     overflow-x: auto;
 }
 
+/*tabulka kdy je stranka uzsi nez 900px 
+ tabulka je mozna posouvat po x-ose*/
 table {
     margin-top: 2vh;
     width: 100%;
-    min-width: 750px;
+    min-width: 900px;
     border-collapse: collapse;
 }
 
+/*zaklad tabuly*/
 table,
 tr,
 th {
     padding: 5px;
     border: 2px solid black;
+}
+
+
+tr.table_head {
+    background-color: rgb(100, 172, 255);
+    color: white;
+}
+
+/*kazdy sudy radek tabulky*/
+tr.table_body:nth-child(even) {
+    background-color: rgb(255, 255, 158);
 }
 
 .row {
@@ -391,16 +429,22 @@ th {
 footer {
     font-size: 20px;
     margin-left: 2%;
-    height: 8vh;
+    height: 15vh;
     margin-top: 1vh;
 }
 
+footer div {
+    display: grid;
+    gap: 10px;
+}
+
 footer span {
-    display: block;
+    grid-column: 1;
 }
 
 @media (min-width: 1024px) {
 
+    /*% pracuji s pomerem k jejich rodici elementu*/
     footer span:nth-child(2) {
         margin-left: 3%;
 
@@ -411,6 +455,19 @@ footer span {
     }
 
     footer {
-        height: 6vh;
+        height: 10vh;
+    }
+
+    footer span:nth-child(even) {
+        grid-row: 2;
+    }
+
+    footer span:nth-child(odd) {
+        grid-row: 1;
+    }
+
+    footer span:nth-child(3),
+    footer span:nth-child(4) {
+        grid-column: 2;
     }
 }

@@ -11,19 +11,18 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Ondřej Šustr</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/email_link.js"></script>
-    <script src="js/nav_menu_rozbaleni.js"></script>
+    <!--js byl castecne vytvoreny AI a doladeny podle mych potreb (offset, atd.)-->
     <script src="js/smooth_scroll.js"></script>
-    <script src="js/nav_menu_highlight.js"></script>
-    <script src="js/flex-cell.js"></script>
+    <script src="js/menu_highlight.js"></script>
+    <!-- vsechen js niz (v body) uz je cista moje prace-->
 </head>
 
 <body>
     <header>
-        <a href=""><img src="img/portret.jpg" alt="Portret"></a>
+        <a href="http://www.stud.fit.vutbr.cz/~xsustro00/"><img src="img/portret.jpg" alt="Portret"></a>
         <section id="mob_nav">
-            <h1><a href="">Ondřej Šustr</a></h1>
-            <i class="fas fa-bars" id="toggle_menu"></i>
+            <h1><a href="http://www.stud.fit.vutbr.cz/~xsustro00/">Ondřej Šustr</a></h1>
+            <i class="button fas fa-bars" id="toggle_menu" onclick="roztahni();"></i>
         </section>
         <ul id="nav_menu">
             <li class="nav"><a href="#uvod">
@@ -48,13 +47,13 @@
                 <p>BRNO-KRÁLOVO POLE</p>
                 <p>612 00, CZ</p>
                 <p><i class="fa-solid fa-phone"></i>777-555-333</p>
-                <a href="mailto:xsustro00@fit.vutbr.cz" class="torange" id="emaillink">xsustro00@fit.vutbr.cz</a>
+                <a href="mailto:xsustro00@fit.vutbr.cz" class="torange">xsustro00@fit.vutbr.cz</a>
             </div>
             <p>Jsem student na škole Vysoké Učení Technické - Fakulta Informačních Technologií, mám
                 zkušenosti práce v
-                jazyce <i class="fa-solid fa-c"></i>, Pydivon<i class="fa-brands fa-python"></i>, HTML<i
-                    class="fa-brands fa-html5"></i>, CSS<i class="fa-brands fa-css3"></i> a
-                trochu v JavaScriptu<i class="fa-brands fa-js"></i></p>
+                jazyce <i class="fa-solid fa-c"></i>, Pythyn <i class="fa-brands fa-python"></i>, HTML <i
+                    class="fa-brands fa-html5"></i>, CSS <i class="fa-brands fa-css3"></i> a
+                trochu v JavaScriptu <i class="fa-brands fa-js"></i></p>
             <p></p>
             <div id="soc_site">
                 <a href="https://gidivub.com"><i class="fa-brands fa-github"></i></a><a href="https://facebook.com"><i
@@ -93,28 +92,28 @@
                 <h3>Dokončené</h3>
                 <div class="tabulka">
                     <table>
-                        <tr>
+                        <tr class="table_head">
                             <th>Předmět</th>
                             <th>Název</th>
                             <th>Popis</th>
                             <th>Datum</th>
                             <th>Body</th>
                         </tr>
-                        <tr>
+                        <tr class="table_body">
                             <th>IZP</th>
                             <th>Bludiště</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>Práce s datovými strukturami v jazyce C</th>
+                            <th>1. prosince 2023</th>
+                            <th>11.55/10</th>
                         </tr>
-                        <tr>
+                        <tr class="table_body">
                             <th>ITW</ht>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>CSS a JS</th>
+                            <th>Pomocí CSS a JavaScriptu vytvořit vzhled pro webovou stránku.</th>
+                            <th>31. března 2024</th>
                             <th>?/20</th>
                         </tr>
-                        <tr>
+                        <tr class="table_body">
                             <th>IOS</th>
                             <th>Kryptoměnová burza</th>
                             <th>Udělání scriptu pro předzpracování logů kryptoměnové burzy</th>
@@ -128,33 +127,33 @@
                 <h3>Rozdělané</h3>
                 <div class="tabulka">
                     <table>
-                        <tr>
+                        <tr class="table_head">
                             <th>Předmět</th>
                             <th>Název</th>
                             <th>Popis</th>
                             <th>Datum</th>
                             <th>Body</th>
                         </tr>
-                        <tr>
+                        <tr class="table_body">
                             <th>ITW</th>
                             <th>Web profil</th>
                             <th>Tvorba profilové webové prezentace</th>
                             <th>26. dubna 2024</th>
                             <th>?/30</th>
                         </tr>
-                        <tr>
+                        <tr class="table_body">
                             <th>IOS</ht>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>Synchronizace</th>
+                            <th>Synchronizace procesů pomocí semaforů</th>
+                            <th>28. dubna 2024</th>
+                            <th>?/15</th>
                         </tr>
-                        <tr>
+                        <tr class="table_body">
                             <th>INC</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>Asynchroní<br> sériový přijímač</th>
+                            <th>Implementace v jazyce VHDL a dokumentace</th>
+                            <th>29. dubna 2024</th>
+                            <th>?/20</th>
                         </tr>
                     </table>
                 </div>
@@ -173,8 +172,28 @@
         <div>
             <span class="tblack">Zveřejněno: 26.4.2024</span>
             <span class="tblack">Autor: Ondřej Šustr</span>
+            <span id="cas">
+                <script>
+                    var cas = new Date();
+                    document.write("Čas načtení: " + cas.getHours() + " : " + cas.getMinutes() + " : " + cas.getSeconds());
+                </script>
+            </span>
+            <span id="datum">
+                <script>
+                    var datum = new Date();
+                    /* mesic je z nejakeho duvodu o jedna pozadu*/
+                    document.write("Dnešní datum: " + datum.getDate() + ". " + (datum.getMonth() + 1) + ". " + datum.getFullYear());
+                </script>
+            </span>
         </div>
     </footer>
+    <script>
+        function roztahni() {
+            var menu = document.getElementById('nav_menu');
+            var button = document.getElementById('toggle_menu');
+            button.addEventListener("click", menu.classList.toggle("open"))
+        }
+    </script>
 </body>
 
 </html>
