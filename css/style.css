@@ -34,6 +34,7 @@ body {
 
 /*kdyz je velka obrzovka
 tak body bude mimo header*/
+/*pro šířka obrazovky 1400px je rozložení stránky taky validní*/
 @media (min-width: 1024px) {
     body {
         width: calc(100% - 230px);
@@ -88,6 +89,7 @@ header img {
     margin-top: -20vh;
 }
 
+/*skryti mobilni navigace a nastaveni obrazku*/
 @media (min-width: 1024px) {
     #mob_nav {
         display: none;
